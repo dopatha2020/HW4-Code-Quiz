@@ -1,7 +1,7 @@
 window.onload=function() {
     var startButton = document.getElementById("startbtn")
     startButton.addEventListener("click", function(){
-        setTime(120);
+        setTime();
         setQuestion();
         console.log(event);
     });
@@ -10,7 +10,7 @@ window.onload=function() {
   
   //test code
 
-<div class="hide" id="divOne"></div>
+{/* <div class="hide" id="divOne"></div>
 <div id="divTwo"></div>
 <div id="divThree"></div>
 <div id ="questionDiv">
@@ -29,7 +29,7 @@ document.querySelector(".hide").classList.remove("hide")
 
 .hide {
     display:none;
-}
+} */}
 
 
 
