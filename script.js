@@ -9,7 +9,6 @@ document.getElementById('input').style.display = 'none'
 document.getElementById('table').style.display = 'none'
 
 
-
 button.onclick = startQuiz;
 
 function startQuiz() {
@@ -17,9 +16,9 @@ function startQuiz() {
     timer--
     document.querySelector('#timer').innerHTML = timer 
   }, 1000);
-
-  document.getElementById('Header').style.display = 'none'
-}
+    document.getElementById('Header').style.display = 'none'
+    document.getElementById('questions').style.display = 'block'
+  }
   document.querySelector('#timer').innerHTML = timer
 
 
