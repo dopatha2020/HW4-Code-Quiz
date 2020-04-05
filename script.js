@@ -1,14 +1,27 @@
 var button = document.querySelector('#startbtn');
 var timer = 120;
+var counter = 0
 var timeText = document.querySelector('#timer');
-
+var choice1 = document.querySelector('#a')
+var questions = [
+  { 
+    question:'What are the three building blocks of the web?',
+          answers:['HTML, CSS, JavaScript', 'Google, Yahoo, Bing', 'Amazon, Ebay, CraigsList', 'Internet, TV, Newspaper'],
+          answer:'a'
+  },
+  {
+    question:'what is my favorite food',
+          answers:['pizza', 'g', 'y'],
+          answer:'a'
+  }
+]
 
 document.getElementById('questions').style.display = 'none'
 document.getElementById('answer').style.display = 'none'
 document.getElementById('input').style.display = 'none'
 document.getElementById('table').style.display = 'none'
 
-
+choice1.onclick = showQuestions
 button.onclick = startQuiz;
 
 function startQuiz() {
@@ -18,8 +31,20 @@ function startQuiz() {
   }, 1000);
     document.getElementById('Header').style.display = 'none'
     document.getElementById('questions').style.display = 'block'
+    showQuestions()
   }
   document.querySelector('#timer').innerHTML = timer
+
+  function showQuestions() {
+    document.getElementById("QuestionTag").innerHTML = questions[counter].question
+console.log(questions[counter])
+  if (questions[counter].answer === event.target.id) {
+      console.log("yes")
+      
+  }
+  counter ++
+  }
+
 
 
 
