@@ -2,20 +2,24 @@ var button = document.querySelector('#startbtn');
 var timer = 120;
 var counter = 0
 var timeText = document.querySelector('#timer');
+var choicesEl = document.getElementById("questionDisplay")
 var choice1 = document.querySelector('#a')
+var choice2 = document.querySelector('#b')
+var choice3 = document.querySelector('#c')
+var choice4 = document.querySelector('#d')
+
 var questions = [
   { 
     question:'What are the three building blocks of the web?',
-          answers:['HTML, CSS, JavaScript', 'Google, Yahoo, Bing', 'Amazon, Ebay, CraigsList', 'Internet, TV, Newspaper'],
-          answer:'a'
+          choices:['HTML, CSS, JavaScript', 'Google, Yahoo, Bing', 'Amazon, Ebay, CraigsList', 'Internet, TV, Newspaper'],
+          answer:'HTML, CSS, JavaScript'
   },
   {
     question:'what is my favorite food',
-          answers:['pizza', 'g', 'y'],
+          choices:['pizza', 'g', 'y'],
           answer:'a'
   }
 ]
-
 document.getElementById('questions').style.display = 'none'
 document.getElementById('answer').style.display = 'none'
 document.getElementById('input').style.display = 'none'
@@ -35,9 +39,32 @@ function startQuiz() {
   }
   document.querySelector('#timer').innerHTML = timer
 
+  
+  // function showQuestions() {
+  //   // get current question object from array
+  //   var currentQuestion = questions[currentQuestionIndex];
+  //   // update title with current question
+  //   var titleEl = document.getElementById("questionDisplay");
+  //   titleEl.textContent = currentQuestion.title;
+  //   // clear out any old question choices
+  //   choicesEl.innerHTML = "";
+  //   // loop over choices
+  //   currentQuestion.choices.forEach(function(choice, i) {
+  //     // create new button for each choice
+  //     var choiceNode = document.createElement("button");
+  //     choiceNode.setAttribute("class", "choice");
+  //     choiceNode.setAttribute("value", choice);
+  //     choiceNode.textContent = i + 1 + ". " + choice;
+  //     // attach click event listener to each choice
+  //     choiceNode.onclick = questionClick;
+  //     // display on the page
+  //     choicesEl.appendChild(choiceNode);
+  //   });
+  // }
+
   function showQuestions() {
     document.getElementById("QuestionTag").innerHTML = questions[counter].question
-console.log(questions[counter])
+
   if (questions[counter].answer === event.target.id) {
       console.log("yes")
       
@@ -46,6 +73,9 @@ console.log(questions[counter])
   }
 
 
+  function showAnswers() {
+    document.getElementById("a").innerHTML = questions[counter].answers
+  }
 
 
 
